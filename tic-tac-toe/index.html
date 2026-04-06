@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tres en ratlla - Joc clàssic amb taulers 3x3, 4x4, 5x5 i intel·ligència artificial">
+    <title>Tres en Ratlla</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+<!-- Loading overlay -->
+<div class="loading-overlay" id="loading-overlay">
+    <div class="loading-spinner"></div>
+</div>
+
+<!-- Floating particles background -->
+<div class="particles" id="particles"></div>
+
+<div class="app-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="logo" id="logo-text">Tres en Ratlla</div>
+        <div class="lang-dropdown-wrapper">
+            <select class="lang-dropdown" id="lang-select" onchange="onLanguageChange(this)"></select>
+            <span class="lang-dropdown-arrow">▼</span>
+        </div>
+    </header>
+
+    <!-- Setup Panel -->
+    <div class="setup-panel" id="setup-panel">
+        <!-- Board Size -->
+        <div class="setup-section">
+            <div class="setup-label" data-i18n="board_size">Board Size</div>
+            <div class="option-group" id="board-size-group">
+                <button class="option-btn selected" data-value="3" onclick="selectOption('boardSize', 3, this)">
+                    <span class="option-icon">◻️</span>
+                    <span class="option-text">3 × 3</span>
+                </button>
+                <button class="option-btn" data-value="4" onclick="selectOption('boardSize', 4, this)">
+                    <span class="option-icon">▦</span>
+                    <span class="option-text">4 × 4</span>
+                </button>
+                <button class="option-btn" data-value="5" onclick="selectOption('boardSize', 5, this)">
+                    <span class="option-icon">⊞</span>
+                    <span class="option-text">5 × 5</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Players -->
+        <div class="setup-section">
+            <div class="setup-label" data-i18n="players">Players</div>
+            <div class="option-group" id="players-group">
+                <button class="option-btn selected" data-value="1" onclick="selectOption('players', 1, this)">
+                    <span class="option-icon">🤖</span>
+                    <span class="option-text" data-i18n="vs_ai">1 Player (vs AI)</span>
+                </button>
+                <button class="option-btn" data-value="2" onclick="selectOption('players', 2, this)">
+                    <span class="option-icon">👥</span>
+                    <span class="option-text" data-i18n="vs_player">2 Players</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Difficulty -->
+        <div class="setup-section difficulty-section visible" id="difficulty-section">
+            <div class="setup-label" data-i18n="difficulty">Difficulty</div>
+            <div class="option-group" id="difficulty-group">
+                <button class="option-btn diff-easy selected" data-value="easy" onclick="selectOption('difficulty', 'easy', this)">
+                    <span class="option-text" data-i18n="easy">Easy</span>
+                </button>
+                <button class="option-btn diff-medium" data-value="medium" onclick="selectOption('difficulty', 'medium', this)">
+                    <span class="option-text" data-i18n="medium">Medium</span>
+                </button>
+                <button class="option-btn diff-hard" data-value="hard" onclick="selectOption('difficulty', 'hard', this)">
+                    <span class="option-text" data-i18n="hard">Hard</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Start -->
+        <button class="start-btn" id="start-btn" data-i18n="start_game" onclick="startGame()">Start Game</button>
+    </div>
+
+    <!-- Game Area -->
+    <div class="game-area" id="game-area">
+        <!-- Scoreboard -->
+        <div class="score-bar">
+            <div class="score-card x-card active-turn" id="score-x">
+                <div class="player-name" id="player-x-name">Player 1 (X)</div>
+                <div class="score-value" id="score-x-val">0</div>
+            </div>
+            <div class="score-card score-draw" id="score-draw">
+                <div class="player-name" data-i18n="draws">Draws</div>
+                <div class="score-value" id="score-draw-val">0</div>
+            </div>
+            <div class="score-card o-card" id="score-o">
+                <div class="player-name" id="player-o-name">Player 2 (O)</div>
+                <div class="score-value" id="score-o-val">0</div>
+            </div>
+        </div>
+
+        <!-- Turn indicator -->
+        <div class="turn-indicator" id="turn-indicator">
+            <span data-i18n="turn_of">Turn of</span>
+            <span class="turn-symbol x-sym" id="turn-symbol">X</span>
+        </div>
+
+        <!-- AI thinking -->
+        <div class="ai-thinking" id="ai-thinking">
+            <span data-i18n="ai_thinking">AI is thinking</span>
+            <div class="ai-dots"><span></span><span></span><span></span></div>
+        </div>
+
+        <!-- Board -->
+        <div class="board-wrapper">
+            <div class="board size-3" id="board"></div>
+        </div>
+
+        <!-- Actions -->
+        <div style="display: flex; gap: 10px; width: 100%;">
+            <button class="back-btn" onclick="backToMenu()" style="flex: 1; justify-content: center;">
+                ← <span data-i18n="back_to_menu">Back to menu</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Result overlay -->
+<div class="result-overlay" id="result-overlay">
+    <div class="result-card">
+        <div class="result-icon" id="result-icon">🏆</div>
+        <div class="result-title" id="result-title"></div>
+        <div class="result-subtitle" id="result-subtitle"></div>
+        <div class="result-actions">
+            <button class="result-btn secondary" onclick="backToMenu()" data-i18n="menu">Menu</button>
+            <button class="result-btn primary" onclick="playAgain()" data-i18n="play_again">Play Again</button>
+        </div>
+    </div>
+</div>
+
+<script src="./../translations.js"></script>
+<script src="./index.js"></script>
+</body>
+</html>

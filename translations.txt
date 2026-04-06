@@ -1,0 +1,31 @@
+key,Català,Castellano,English,Euskara,Galego,Português,Français,Italiano,Deutsch
+acronym,CA,ES,EN,EU,GL,PT,FR,IT,DE
+game_title,Tres en Ratlla,Tres en Raya,Tic-Tac-Toe,Hiru Segidan,Tres en Raia,Jogo do Galo,Morpion,Tris,Tic-Tac-Toe
+board_size,Mida del tauler,Tamaño del tablero,Board Size,Taularen tamaina,Tamaño do taboleiro,Tamanho do tabuleiro,Taille du plateau,Dimensione tabellone,Spielfeldgröße
+players,Jugadors,Jugadores,Players,Jokalariak,Xogadores,Jogadores,Joueurs,Giocatori,Spieler
+vs_ai,1 Jugador (vs IA),1 Jugador (vs IA),1 Player (vs AI),Jokalari 1 (IA aurka),1 Xogador (vs IA),1 Jogador (vs IA),1 Joueur (vs IA),1 Giocatore (vs IA),1 Spieler (vs KI)
+vs_player,2 Jugadors,2 Jugadores,2 Players,2 Jokalari,2 Xogadores,2 Jogadores,2 Joueurs,2 Giocatori,2 Spieler
+difficulty,Dificultat,Dificultad,Difficulty,Zailtasuna,Dificultade,Dificuldade,Difficulté,Difficoltà,Schwierigkeit
+easy,Fàcil,Fácil,Easy,Erraza,Fácil,Fácil,Facile,Facile,Leicht
+medium,Mitjana,Media,Medium,Ertaina,Media,Médio,Moyen,Medio,Mittel
+hard,Difícil,Difícil,Hard,Zaila,Difícil,Difícil,Difficile,Difficile,Schwer
+start_game,Començar Partida,Comenzar Partida,Start Game,Partida Hasi,Comezar Partida,Iniciar Jogo,Commencer la Partie,Inizia Partita,Spiel Starten
+turn_of,Torn de,Turno de,Turn of,Txanda:,Quenda de,Vez de,Tour de,Turno di,Zug von
+ai_thinking,La IA està pensant,La IA está pensando,AI is thinking,IA pentsatzen ari da,A IA está pensando,A IA está pensando,L'IA réfléchit,L'IA sta pensando,KI denkt nach
+draws,Empats,Empates,Draws,Berdinketak,Empates,Empates,Égalités,Pareggi,Unentschieden
+player1,Jugador 1,Jugador 1,Player 1,1. Jokalaria,Xogador 1,Jogador 1,Joueur 1,Giocatore 1,Spieler 1
+player2,Jugador 2,Jugador 2,Player 2,2. Jokalaria,Xogador 2,Jogador 2,Joueur 2,Giocatore 2,Spieler 2
+ai,IA,IA,AI,IA,IA,IA,IA,IA,KI
+victory,Victòria!,¡Victoria!,Victory!,Garaipena!,Vitoria!,Vitória!,Victoire !,Vittoria!,Sieg!
+draw,Empat!,¡Empate!,Draw!,Berdinketa!,Empate!,Empate!,Égalité !,Pareggio!,Unentschieden!
+x_wins,X ha guanyat la partida!,¡X ha ganado la partida!,X wins the game!,X-k partida irabazi du!,X gañou a partida!,X ganhou o jogo!,X remporte la partie !,X vince la partita!,X gewinnt das Spiel!
+o_wins,O ha guanyat la partida!,¡O ha ganado la partida!,O wins the game!,O-k partida irabazi du!,O gañou a partida!,O ganhou o jogo!,O remporte la partie !,O vince la partita!,O gewinnt das Spiel!
+no_winner,No hi ha guanyador!,¡No hay ganador!,No winner!,Ez dago irabazlerik!,Non hai gañador!,Sem vencedor!,Pas de gagnant !,Nessun vincitore!,Kein Gewinner!
+menu,Menú,Menú,Menu,Menua,Menú,Menu,Menu,Menu,Menü
+play_again,Tornar a jugar,Volver a jugar,Play Again,Berriro jolastu,Xogar outra vez,Jogar Novamente,Rejouer,Gioca Ancora,Nochmal Spielen
+back_to_menu,Tornar al menú,Volver al menú,Back to menu,Menura itzuli,Volver ao menú,Voltar ao menu,Retour au menu,Torna al menu,Zurück zum Menü
+you_win,Has guanyat!,¡Has ganado!,You win!,Irabazi duzu!,Gañaches!,Você ganhou!,Vous avez gagné !,Hai vinto!,Du hast gewonnen!
+you_lose,Has perdut!,¡Has perdido!,You lose!,Galdu duzu!,Perdiches!,Você perdeu!,Vous avez perdu !,Hai perso!,Du hast verloren!
+ai_wins,La IA ha guanyat!,¡La IA ha ganado!,AI wins!,IAk irabazi du!,A IA gañou!,A IA ganhou!,L'IA a gagné !,L'IA ha vinto!,KI gewinnt!
+congratulations,Felicitats!,¡Felicidades!,Congratulations!,Zorionak!,Parabéns!,Parabéns!,Félicitations !,Congratulazioni!,Glückwunsch!
+better_luck,Més sort la propera vegada!,¡Más suerte la próxima vez!,Better luck next time!,Hurrengo aldian zorte gehiago!,Máis sorte a próxima vez!,Mais sorte na próxima vez!,Plus de chance la prochaine fois !,Più fortuna la prossima volta!,Mehr Glück beim nächsten Mal!
