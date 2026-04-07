@@ -49,3 +49,5 @@ pacman_tip,Usa les fletxes per moure el Pac-Man,Usa las flechas para mover a Pac
 fullscreen,Pantalla completa,Pantalla completa,Fullscreen,Pantaila osoa,Pantalla completa,Tela cheia,Plein écran,Schermo intero,Vollbild
 pacman_1p,1 Jugador,1 Jugador,1 Player,1 Jokalaria,1 Xogador,1 Jogador,1 Joueur,1 Giocatore,1 Spieler
 pacman_2p,2 Jugadors,2 Jugadores,2 Players,2 Jokalari,2 Xogadores,2 Jogadores,2 Joueurs,2 Giocatori,2 Spieler
+br_title,Basket Random,Basket Random,Basket Random,Basket Random,Basket Random,Basket Random,Basket Random,Basket Random,Basket Random
+br_tip,Fletxa Amunt / W per saltar,Flecha Arriba / W para saltar,Up Arrow / W to jump,Gora Gezia / W salto egiteko,Frecha Arriba / W para saltar,Seta Cima / W para pular,Flèche Haut / W pour sauter,Freccia Sù / W per saltare,Pfeil Hoch / W zum Springen
