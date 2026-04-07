@@ -82,17 +82,22 @@
         gameStarted = true;
         document.getElementById("start-btns").style.display = "none";
         
+        let launched = false;
         function launch() {
-            google.pacman.insertCoin();
-            if (players === 2) {
-                setTimeout(() => google.pacman.insertCoin(), 100);
-            }
+            if (launched) return;
+            launched = true;
+            setTimeout(() => {
+                google.pacman.insertCoin();
+                if (players === 2) {
+                    setTimeout(() => google.pacman.insertCoin(), 100);
+                }
+            }, 100);
         }
 
         if(typeof google.pacman === "undefined") {
             initGame();
             var checkReady = setInterval(function() {
-                if(typeof google.pacman !== "undefined") {
+                if(typeof google.pacman !== "undefined" && typeof google.pacman.insertCoin === "function") {
                     clearInterval(checkReady);
                     launch();
                 }
