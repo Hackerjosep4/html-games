@@ -47,3 +47,5 @@ pacman_title,Pac-Man,Pac-Man,Pac-Man,Pac-Man,Pac-Man,Pac-Man,Pac-Man,Pac-Man,Pac
 pacman_desc,El joc clàssic de Google Pac-Man,El juego clásico de Google Pac-Man,The classic Google Pac-Man game,Google Pac-Man joko klasikoa,O xogo clásico de Google Pac-Man,O jogo clássico do Google Pac-Man,Le jeu classique Google Pac-Man,Il classico gioco Google Pac-Man,Das klassische Google Pac-Man Spiel
 pacman_tip,Usa les fletxes per moure el Pac-Man,Usa las flechas para mover a Pac-Man,Use arrow keys to move Pac-Man,Erabili geziak Pac-Man mugitzeko,Usa as frechas para mover a Pac-Man,Use as setas para mover o Pac-Man,Utilisez les flèches pour déplacer Pac-Man,Usa le frecce per muovere Pac-Man,Benutze Pfeiltasten um Pac-Man zu bewegen
 fullscreen,Pantalla completa,Pantalla completa,Fullscreen,Pantaila osoa,Pantalla completa,Tela cheia,Plein écran,Schermo intero,Vollbild
+pacman_1p,1 Jugador,1 Jugador,1 Player,1 Jokalaria,1 Xogador,1 Jogador,1 Joueur,1 Giocatore,1 Spieler
+pacman_2p,2 Jugadors,2 Jugadores,2 Players,2 Jokalari,2 Xogadores,2 Jogadores,2 Joueurs,2 Giocatori,2 Spieler

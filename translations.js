@@ -73,7 +73,9 @@ press_p_pause,Prem P per pausar,Press P to Pause
 pacman_title,Pac-Man,Pac-Man
 pacman_desc,El joc clàssic de Google Pac-Man,The classic Google Pac-Man game
 pacman_tip,Usa les fletxes per moure el Pac-Man,Use arrow keys to move Pac-Man
-fullscreen,Pantalla completa,Fullscreen`;
+fullscreen,Pantalla completa,Fullscreen
+pacman_1p,1 Jugador,1 Player
+pacman_2p,2 Jugadors,2 Players`;
 
 // --- CSV Parser ---
 function parseCSV(csvText) {
