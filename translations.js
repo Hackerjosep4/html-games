@@ -69,7 +69,11 @@ new_record,Nou rècord!,New Record!
 press_to_start,Prem per començar,Press to Start
 controls_arrows,Utilitza les fletxes o WASD,Use Arrow Keys or WASD
 paused,Pausat,Paused
-press_p_pause,Prem P per pausar,Press P to Pause`;
+press_p_pause,Prem P per pausar,Press P to Pause
+pacman_title,Pac-Man,Pac-Man
+pacman_desc,El joc clàssic de Google Pac-Man,The classic Google Pac-Man game
+pacman_tip,Usa les fletxes per moure el Pac-Man,Use arrow keys to move Pac-Man
+fullscreen,Pantalla completa,Fullscreen`;
 
 // --- CSV Parser ---
 function parseCSV(csvText) {

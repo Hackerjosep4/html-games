@@ -43,3 +43,7 @@ press_to_start,Prem per començar,Pulsa para empezar,Press to Start,Sakatu haste
 controls_arrows,Utilitza les fletxes o WASD,Usa las flechas o WASD,Use Arrow Keys or WASD,Erabili geziak edo WASD,Usa as frechas ou WASD,Use as setas ou WASD,Utilisez les flèches ou ZQSD,Usa le frecce o WASD,Benutze Pfeiltasten oder WASD
 paused,Pausat,Pausado,Paused,Pausatuta,Pausado,Pausado,En pause,In pausa,Pausiert
 press_p_pause,Prem P per pausar,Pulsa P para pausar,Press P to Pause,Sakatu P pausatzeko,Preme P para pausar,Pressione P para pausar,Appuyez P pour pauser,Premi P per pausa,Drücke P zum Pausieren
+pacman_title,Pac-Man,Pac-Man,Pac-Man,Pac-Man,Pac-Man,Pac-Man,Pac-Man,Pac-Man,Pac-Man
+pacman_desc,El joc clàssic de Google Pac-Man,El juego clásico de Google Pac-Man,The classic Google Pac-Man game,Google Pac-Man joko klasikoa,O xogo clásico de Google Pac-Man,O jogo clássico do Google Pac-Man,Le jeu classique Google Pac-Man,Il classico gioco Google Pac-Man,Das klassische Google Pac-Man Spiel
+pacman_tip,Usa les fletxes per moure el Pac-Man,Usa las flechas para mover a Pac-Man,Use arrow keys to move Pac-Man,Erabili geziak Pac-Man mugitzeko,Usa as frechas para mover a Pac-Man,Use as setas para mover o Pac-Man,Utilisez les flèches pour déplacer Pac-Man,Usa le frecce per muovere Pac-Man,Benutze Pfeiltasten um Pac-Man zu bewegen
+fullscreen,Pantalla completa,Pantalla completa,Fullscreen,Pantaila osoa,Pantalla completa,Tela cheia,Plein écran,Schermo intero,Vollbild

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pac-Man — Google Doodle Classic">
+    <title>Pac-Man</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+<div class="game-wrap">
+    <!-- Header -->
+    <div class="top-bar">
+        <div class="top-left">
+            <span class="pac-icon">ᗧ</span>
+            <span class="title" data-i18n="pacman_title">Pac-Man</span>
+        </div>
+        <div class="top-right">
+            <button class="fs-btn" id="fs-btn" onclick="toggleFS()" title="Fullscreen">⛶</button>
+            <div class="lang-wrap">
+                <select class="lang-sel" id="lang-select" onchange="onLanguageChange(this)"></select>
+                <span class="lang-arr">▼</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game iframe -->
+    <div class="iframe-wrap" id="iframe-wrap">
+        <iframe 
+            id="pacman-frame"
+            src="https://www.google.com/logos/2010/pacman10-i.html"
+            frameborder="0"
+            scrolling="no"
+            allowfullscreen
+            allow="autoplay"
+        ></iframe>
+        <div class="offline-msg" id="offline-msg" style="display:none">
+            <div class="offline-icon">🟡</div>
+            <div class="offline-title">Pac-Man</div>
+            <div class="offline-sub" data-i18n="pacman_desc">El joc clàssic de Google Pac-Man</div>
+            <div class="offline-sub" style="margin-top:4px; font-size:0.75rem; opacity:0.5;">
+                ⓘ L'iframe no funciona en mode local (file://)
+            </div>
+            <button class="open-btn" onclick="openPacman()">
+                ▶ Obrir Pac-Man
+            </button>
+        </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="bottom-bar">
+        <span class="tip" data-i18n="pacman_tip">Usa les fletxes per moure el Pac-Man</span>
+    </div>
+</div>
+
+<script src="./../translations.js"></script>
+<script src="./index.js"></script>
+</body>
+</html>
