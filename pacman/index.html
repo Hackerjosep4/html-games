@@ -31,10 +31,10 @@
             <div id="hplogo-l"><div id="hplogo-b"></div></div>
         </div>
         <div class="btn-group" id="start-btns">
-            <button class="play-btn" onclick="startPacman(1)">
+            <button class="play-btn" onclick="startPacman(event, 1)">
                 ▶ <span data-i18n="vs_ai">1 Jugador</span>
             </button>
-            <button class="play-btn p2" onclick="startPacman(2)">
+            <button class="play-btn p2" onclick="startPacman(event, 2)">
                 ▶ <span data-i18n="vs_player">2 Jugadors</span>
             </button>
         </div>
@@ -73,7 +73,11 @@
     }
     let gameStarted = false;
 
-    function startPacman(players) {
+    function startPacman(event, players) {
+        if (event) {
+            event.stopPropagation();
+            event.preventDefault();
+        }
         if (gameStarted) return;
         gameStarted = true;
         document.getElementById("start-btns").style.display = "none";
@@ -109,7 +113,6 @@
 
     document.addEventListener('DOMContentLoaded', async () => {
         await loadTranslations();
-        initGame();
     });
 </script>
 </body>
