@@ -86,12 +86,12 @@
         function launch() {
             if (launched) return;
             launched = true;
-            setTimeout(() => {
-                google.pacman.insertCoin();
-                if (players === 2) {
-                    setTimeout(() => google.pacman.insertCoin(), 100);
-                }
-            }, 100);
+            
+            // The Google script automatically inserts the 1st coin when injected after a click!
+            // If the user wants 2 players, we only need to manually insert the 2nd coin.
+            if (players === 2) {
+                setTimeout(() => google.pacman.insertCoin(), 100);
+            }
         }
 
         if(typeof google.pacman === "undefined") {
