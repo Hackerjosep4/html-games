@@ -55,7 +55,21 @@ you_win,Has guanyat!,You win!
 you_lose,Has perdut!,You lose!
 ai_wins,La IA ha guanyat!,AI wins!
 congratulations,Felicitats!,Congratulations!
-better_luck,Més sort la propera vegada!,Better luck next time!`;
+better_luck,Més sort la propera vegada!,Better luck next time!
+snake_title,Serp,Snake
+score,Puntuació,Score
+high_score,Rècord,High Score
+speed,Velocitat,Speed
+slow,Lenta,Slow
+normal,Normal,Normal
+fast,Ràpida,Fast
+game_over,Fi de la partida!,Game Over!
+final_score,Puntuació final,Final Score
+new_record,Nou rècord!,New Record!
+press_to_start,Prem per començar,Press to Start
+controls_arrows,Utilitza les fletxes o WASD,Use Arrow Keys or WASD
+paused,Pausat,Paused
+press_p_pause,Prem P per pausar,Press P to Pause`;
 
 // --- CSV Parser ---
 function parseCSV(csvText) {
@@ -173,8 +187,11 @@ function applyTranslations() {
     });
 
     const logo = document.getElementById('logo-text');
-    if (logo) logo.textContent = t('game_title');
-    document.title = t('game_title');
+    if (logo) {
+        const titleKey = logo.getAttribute('data-i18n') || 'game_title';
+        logo.textContent = t(titleKey);
+        document.title = t(titleKey);
+    }
 
     if (typeof updatePlayerNames === 'function') {
         updatePlayerNames();

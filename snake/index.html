@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Snake — Google Snake style">
+    <title>Snake</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+<div class="game-wrap">
+    <!-- Top bar (green, Google style) -->
+    <div class="top-bar">
+        <div class="top-left">
+            <span class="apple-icon"></span>
+            <span id="sc-val">0</span>
+        </div>
+        <div class="top-right">
+            <div class="trophy">🏆 <span id="hs-val">0</span></div>
+            <div class="lang-wrap">
+                <select class="lang-sel" id="lang-select" onchange="onLanguageChange(this)"></select>
+                <span class="lang-arr">▼</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Board -->
+    <div style="position:relative;">
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Overlay -->
+        <div class="overlay" id="ov">
+            <div class="ov-icon" id="ov-ic">🐍</div>
+            <div class="ov-title" id="ov-ti">Snake</div>
+            <div class="ov-sub" id="ov-su">Use Arrow Keys or WASD</div>
+            <div class="ov-big" id="ov-sc" style="display:none">0</div>
+            <div class="ov-badge" id="ov-re" style="display:none"></div>
+            <button class="ov-btn" id="ov-bt">Play</button>
+        </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="bottom-bar">
+        <button class="speed-pill" onclick="setSpd('slow',this)" data-i18n="slow">Slow</button>
+        <button class="speed-pill active" onclick="setSpd('normal',this)" data-i18n="normal">Normal</button>
+        <button class="speed-pill" onclick="setSpd('fast',this)" data-i18n="fast">Fast</button>
+    </div>
+</div>
+
+<!-- Hint -->
+<div class="hint" data-i18n="controls_arrows">↑↓←→ / WASD · P = Pause</div>
+
+<!-- Mobile D-pad -->
+<div class="dpad-wrap">
+    <div class="dpad">
+        <button class="db" data-d="u" onclick="dpad('u')">▲</button>
+        <button class="db" data-d="l" onclick="dpad('l')">◀</button>
+        <button class="db" data-d="r" onclick="dpad('r')">▶</button>
+        <button class="db" data-d="d" onclick="dpad('d')">▼</button>
+    </div>
+</div>
+
+<script src="./../translations.js"></script>
+<script src="./index.js"></script>
+</body>
+</html>

@@ -29,3 +29,17 @@ you_lose,Has perdut!,¡Has perdido!,You lose!,Galdu duzu!,Perdiches!,Você perde
 ai_wins,La IA ha guanyat!,¡La IA ha ganado!,AI wins!,IAk irabazi du!,A IA gañou!,A IA ganhou!,L'IA a gagné !,L'IA ha vinto!,KI gewinnt!
 congratulations,Felicitats!,¡Felicidades!,Congratulations!,Zorionak!,Parabéns!,Parabéns!,Félicitations !,Congratulazioni!,Glückwunsch!
 better_luck,Més sort la propera vegada!,¡Más suerte la próxima vez!,Better luck next time!,Hurrengo aldian zorte gehiago!,Máis sorte a próxima vez!,Mais sorte na próxima vez!,Plus de chance la prochaine fois !,Più fortuna la prossima volta!,Mehr Glück beim nächsten Mal!
+snake_title,Serp,Serpiente,Snake,Sugea,Serpe,Cobra,Serpent,Serpente,Schlange
+score,Puntuació,Puntuación,Score,Puntuazioa,Puntuación,Pontuação,Score,Punteggio,Punktzahl
+high_score,Rècord,Récord,High Score,Errekorra,Récord,Recorde,Meilleur Score,Record,Highscore
+speed,Velocitat,Velocidad,Speed,Abiadura,Velocidade,Velocidade,Vitesse,Velocità,Geschwindigkeit
+slow,Lenta,Lenta,Slow,Motela,Lenta,Lenta,Lent,Lento,Langsam
+normal,Normal,Normal,Normal,Normala,Normal,Normal,Normal,Normale,Normal
+fast,Ràpida,Rápida,Fast,Azkarra,Rápida,Rápida,Rapide,Veloce,Schnell
+game_over,Fi de la partida!,¡Fin de la partida!,Game Over!,Partida amaitu da!,Fin da partida!,Fim de jogo!,Partie terminée !,Partita finita!,Spiel vorbei!
+final_score,Puntuació final,Puntuación final,Final Score,Azken puntuazioa,Puntuación final,Pontuação final,Score final,Punteggio finale,Endpunktzahl
+new_record,Nou rècord!,¡Nuevo récord!,New Record!,Errekord berria!,Novo récord!,Novo recorde!,Nouveau record !,Nuovo record!,Neuer Rekord!
+press_to_start,Prem per començar,Pulsa para empezar,Press to Start,Sakatu hasteko,Preme para comezar,Pressione para iniciar,Appuyez pour commencer,Premi per iniziare,Drücke zum Starten
+controls_arrows,Utilitza les fletxes o WASD,Usa las flechas o WASD,Use Arrow Keys or WASD,Erabili geziak edo WASD,Usa as frechas ou WASD,Use as setas ou WASD,Utilisez les flèches ou ZQSD,Usa le frecce o WASD,Benutze Pfeiltasten oder WASD
+paused,Pausat,Pausado,Paused,Pausatuta,Pausado,Pausado,En pause,In pausa,Pausiert
+press_p_pause,Prem P per pausar,Pulsa P para pausar,Press P to Pause,Sakatu P pausatzeko,Preme P para pausar,Pressione P para pausar,Appuyez P pour pauser,Premi P per pausa,Drücke P zum Pausieren
