@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,118 +8,122 @@
     <title>Pac-Man</title>
     <link rel="stylesheet" href="./index.css">
 </head>
+
 <body>
 
-<div class="game-wrap">
-    <!-- Header -->
-    <div class="top-bar">
-        <div class="top-left">
-            <span class="pac-icon">ᗧ</span>
-            <span class="title" data-i18n="pacman_title">Pac-Man</span>
-        </div>
-        <div class="top-right">
-            <button class="fs-btn" id="fs-btn" onclick="toggleFS()" title="Fullscreen">⛶</button>
-            <div class="lang-wrap">
-                <select class="lang-sel" id="lang-select" onchange="onLanguageChange(this)"></select>
-                <span class="lang-arr">▼</span>
+    <div class="game-wrap">
+        <!-- Header -->
+        <div class="top-bar">
+            <div class="top-left">
+                <span class="pac-icon">ᗧ</span>
+                <span class="title" data-i18n="pacman_title">Pac-Man</span>
+            </div>
+            <div class="top-right">
+                <button class="fs-btn" id="fs-btn" onclick="toggleFS()" title="Fullscreen">⛶</button>
+                <div class="lang-wrap">
+                    <select class="lang-sel" id="lang-select" onchange="onLanguageChange(this)"></select>
+                    <span class="lang-arr">▼</span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Game area (Google Code) -->
-    <div class="game-area" id="game-area">
-        <div id="hplogo" title="PAC-MAN's 30th Anniversary">
-            <div id="hplogo-l"><div id="hplogo-b"></div></div>
+        <!-- Game area (Google Code) -->
+        <div class="game-area" id="game-area">
+            <div id="hplogo" title="PAC-MAN's 30th Anniversary">
+                <div id="hplogo-l">
+                    <div id="hplogo-b"></div>
+                </div>
+            </div>
+            <div class="btn-group" id="start-btns">
+                <button class="play-btn" onclick="startPacman(event, 1)">
+                    ▶ <span data-i18n="pacman_1p">1 Jugador</span>
+                </button>
+                <button class="play-btn p2" onclick="startPacman(event, 2)">
+                    ▶ <span data-i18n="pacman_2p">2 Jugadors</span>
+                </button>
+            </div>
         </div>
-        <div class="btn-group" id="start-btns">
-            <button class="play-btn" onclick="startPacman(event, 1)">
-                ▶ <span data-i18n="pacman_1p">1 Jugador</span>
-            </button>
-            <button class="play-btn p2" onclick="startPacman(event, 2)">
-                ▶ <span data-i18n="pacman_2p">2 Jugadors</span>
-            </button>
+
+        <!-- Bottom bar -->
+        <div class="bottom-bar">
+            <span class="hint" data-i18n="pacman_tip">Usa les fletxes per moure el Pac-Man</span>
+            <span class="credit">Google Pac-Man Doodle (2010)</span>
         </div>
     </div>
 
-    <!-- Bottom bar -->
-    <div class="bottom-bar">
-        <span class="hint" data-i18n="pacman_tip">Usa les fletxes per moure el Pac-Man</span>
-        <span class="credit">Google Pac-Man Doodle (2010)</span>
-    </div>
-</div>
+    <script src="./../translations.js"></script>
+    <script>
+        // Initialize google namespace required by the game JS
+        window.google || (window.google = {});
+        google.doodle || (google.doodle = {});
+        google.doodle.pacManSound = true; // Enable sound by default
 
-<script src="./../translations.js"></script>
-<script>
-    // Initialize google namespace required by the game JS
-    window.google || (window.google = {});
-    google.doodle || (google.doodle = {});
-    google.doodle.pacManSound = true; // Enable sound by default
+        // Insert Google's script dynamically
+        function initGame() {
+            if (!google.doodle.pmlInstalled) {
+                google.doodle.pmlInstalled = true;
+                document.getElementById("hplogo").style.background = "black";
 
-    // Insert Google's script dynamically
-    function initGame() {
-        if (!google.doodle.pmlInstalled) {
-            google.doodle.pmlInstalled = true;
-            document.getElementById("hplogo").style.background = "black";
-            
-            setTimeout(function() {
-                var c = document.getElementById("hplogo-l");
-                if (c) c.style.display = "block";
-            }, 400);
-            
-            var a = document.createElement("script");
-            a.type = "text/javascript";
-            a.src = "./pacman10-hp.12.js"; // Our downloaded and patched js
-            document.body.appendChild(a);
+                setTimeout(function () {
+                    var c = document.getElementById("hplogo-l");
+                    if (c) c.style.display = "block";
+                }, 400);
+
+                var a = document.createElement("script");
+                a.type = "text/javascript";
+                a.src = "./pacman10-hp.12.js"; // Our downloaded and patched js
+                document.body.appendChild(a);
+            }
         }
-    }
-    let gameStarted = false;
+        let gameStarted = false;
 
-    function startPacman(event, players) {
-        if (event) {
-            event.stopPropagation();
-            event.preventDefault();
-        }
-        if (gameStarted) return;
-        gameStarted = true;
-        document.getElementById("start-btns").style.display = "none";
-        
-        let launched = false;
-        function launch() {
-            if (launched) return;
-            launched = true;
-            
-            // The Google script automatically inserts the 1st coin when injected after a click!
-            // If the user wants 2 players, we only need to manually insert the 2nd coin.
-            if (players === 2) {
-                setTimeout(() => google.pacman.insertCoin(), 100);
+        function startPacman(event, players) {
+            if (event) {
+                event.stopPropagation();
+                event.preventDefault();
+            }
+            if (gameStarted) return;
+            gameStarted = true;
+            document.getElementById("start-btns").style.display = "none";
+
+            let launched = false;
+            function launch() {
+                if (launched) return;
+                launched = true;
+
+                // The Google script automatically inserts the 1st coin when injected after a click!
+                // If the user wants 2 players, we only need to manually insert the 2nd coin.
+                if (players === 2) {
+                    setTimeout(() => google.pacman.insertCoin(), 100);
+                }
+            }
+
+            if (typeof google.pacman === "undefined") {
+                initGame();
+                var checkReady = setInterval(function () {
+                    if (typeof google.pacman !== "undefined" && typeof google.pacman.insertCoin === "function") {
+                        clearInterval(checkReady);
+                        launch();
+                    }
+                }, 100);
+            } else {
+                launch();
             }
         }
 
-        if(typeof google.pacman === "undefined") {
-            initGame();
-            var checkReady = setInterval(function() {
-                if(typeof google.pacman !== "undefined" && typeof google.pacman.insertCoin === "function") {
-                    clearInterval(checkReady);
-                    launch();
-                }
-            }, 100);
-        } else {
-            launch();
+        function toggleFS() {
+            const wrap = document.querySelector('.game-wrap');
+            if (!document.fullscreenElement) {
+                (wrap.requestFullscreen || wrap.webkitRequestFullscreen || wrap.msRequestFullscreen).call(wrap);
+            } else {
+                (document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen).call(document);
+            }
         }
-    }
 
-    function toggleFS() {
-        const wrap = document.querySelector('.game-wrap');
-        if (!document.fullscreenElement) {
-            (wrap.requestFullscreen || wrap.webkitRequestFullscreen || wrap.msRequestFullscreen).call(wrap);
-        } else {
-            (document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen).call(document);
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', async () => {
-        await loadTranslations();
-    });
-</script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadTranslations();
+        });
+    </script>
 </body>
+
 </html>
