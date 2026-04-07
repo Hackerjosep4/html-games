@@ -17,7 +17,6 @@
             <span class="title" data-i18n="pacman_title">Pac-Man</span>
         </div>
         <div class="top-right">
-            <button class="fs-btn" id="fs-btn" onclick="toggleFS()" title="Fullscreen">⛶</button>
             <div class="lang-wrap">
                 <select class="lang-sel" id="lang-select" onchange="onLanguageChange(this)"></select>
                 <span class="lang-arr">▼</span>
@@ -25,36 +24,70 @@
         </div>
     </div>
 
-    <!-- Game iframe -->
-    <div class="iframe-wrap" id="iframe-wrap">
-        <iframe 
-            id="pacman-frame"
-            src="https://www.google.com/logos/2010/pacman10-i.html"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen
-            allow="autoplay"
-        ></iframe>
-        <div class="offline-msg" id="offline-msg" style="display:none">
-            <div class="offline-icon">🟡</div>
-            <div class="offline-title">Pac-Man</div>
-            <div class="offline-sub" data-i18n="pacman_desc">El joc clàssic de Google Pac-Man</div>
-            <div class="offline-sub" style="margin-top:4px; font-size:0.75rem; opacity:0.5;">
-                ⓘ L'iframe no funciona en mode local (file://)
-            </div>
-            <button class="open-btn" onclick="openPacman()">
-                ▶ Obrir Pac-Man
-            </button>
+    <!-- Game area (Google Code) -->
+    <div class="game-area">
+        <div id="hplogo" title="PAC-MAN's 30th Birthday! Doodle with PAC-MAN™ & ©1980 NAMCO BANDAI Games Inc.">
+            <div id="hplogo-l"><div id="hplogo-b"></div></div>
         </div>
+        <button class="play-btn" id="start-btn" onclick="startPacman()">
+            ▶ <span data-i18n="start_game">Insert Coin</span>
+        </button>
     </div>
 
     <!-- Bottom bar -->
     <div class="bottom-bar">
-        <span class="tip" data-i18n="pacman_tip">Usa les fletxes per moure el Pac-Man</span>
+        <span class="hint" data-i18n="pacman_tip">Usa les fletxes per moure el Pac-Man</span>
+        <span class="credit">Google Pac-Man Doodle (2010)</span>
     </div>
 </div>
 
 <script src="./../translations.js"></script>
-<script src="./index.js"></script>
+<script>
+    // Initialize google namespace required by the game JS
+    window.google || (window.google = {});
+    google.doodle || (google.doodle = {});
+    google.doodle.pacManSound = true; // Enable sound by default
+
+    // Insert Google's script dynamically
+    function initGame() {
+        if (!google.doodle.pmlInstalled) {
+            google.doodle.pmlInstalled = true;
+            document.getElementById("hplogo").style.background = "black";
+            
+            setTimeout(function() {
+                var c = document.getElementById("hplogo-l");
+                if (c) c.style.display = "block";
+            }, 400);
+            
+            var a = document.createElement("script");
+            a.type = "text/javascript";
+            a.src = "./pacman10-hp.12.js"; // Our downloaded and patched js
+            document.body.appendChild(a);
+        }
+    }
+
+    function startPacman() {
+        document.getElementById("start-btn").style.display = "none";
+        
+        // If script not loaded yet, load it, then trigger insertCoin
+        if(typeof google.pacman === "undefined") {
+            initGame();
+            var checkReady = setInterval(function() {
+                if(typeof google.pacman !== "undefined") {
+                    clearInterval(checkReady);
+                    google.pacman.insertCoin();
+                }
+            }, 100);
+        } else {
+            google.pacman.insertCoin();
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        await loadTranslations();
+        // Pre-load the script so it's ready sooner
+        initGame();
+    });
+</script>
 </body>
 </html>
