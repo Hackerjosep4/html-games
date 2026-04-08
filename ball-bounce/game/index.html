@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Destination: Brain Test</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <script src="https://h5gamessdk.yyggames.com/sdk/YYGGames.js"></script>
+
 
     <style>
         * {
@@ -93,7 +93,7 @@
         const loadingView = document.getElementById("LoadingView");
         const progress = document.getElementById("progress");
         const canvas = document.querySelector("#unity-canvas");
-        console.log = console.info = console.warn = function () { };
+
         Adapter.init(750, 1334);
         const util = {
             percent: function (value) {
@@ -121,12 +121,11 @@
         script.src = loaderUrl;
         script.onload = () => {
             createUnityInstance(canvas, config, (value) => {
-                util.percent(value * 99);
+                util.percent(value * 100);
             }).then((unityInstance) => {
-                //加载交叉推荐
-                // util.hideLoading();
+                util.hideLoading();
             }).catch((message) => {
-                alert(message);
+                console.error('Unity load error:', message);
             });
         };
         document.body.appendChild(script);
