@@ -68,6 +68,19 @@
 </head>
 
 <body>
+    <script>
+        // MOCK YYGGames SDK missing proxy
+        // This proxy intercepts all calls from Unity (e.g., YYGGames.showInterstitial)
+        // and safely returns a dummy function instead of throwing undefined errors.
+        window.YYGGames = new Proxy({}, {
+            get: function(target, prop) {
+                return function() {
+                    console.log("Mock YYGGames SDK method called:", prop, arguments);
+                };
+            }
+        });
+        window.YYG = window.YYGGames;
+    </script>
     <script src="Adapter.js"></script>
     <div id="unity-container">
         <canvas id="unity-canvas"></canvas>
