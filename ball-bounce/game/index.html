@@ -72,10 +72,24 @@
         // MOCK YYGGames SDK missing proxy
         // This proxy intercepts all calls from Unity (e.g., YYGGames.showInterstitial)
         // and safely returns a dummy function instead of throwing undefined errors.
+        // It also auto-executes any callbacks to prevent the game from pausing forever.
         window.YYGGames = new Proxy({}, {
             get: function(target, prop) {
                 return function() {
                     console.log("Mock YYGGames SDK method called:", prop, arguments);
+                    for (let i = 0; i < arguments.length; i++) {
+                        let arg = arguments[i];
+                        if (typeof arg === 'function') {
+                            setTimeout(arg, 100);
+                        } else if (typeof arg === 'object' && arg !== null) {
+                            for (let key in arg) {
+                                if (typeof arg[key] === 'function') {
+                                    setTimeout(arg[key], 100);
+                                }
+                            }
+                        }
+                    }
+                    return null;
                 };
             }
         });
