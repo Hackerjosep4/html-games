@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ball Bounce - Fun Physics Game">
+    <title>Ball Bounce</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+    <div class="game-wrap">
+        <!-- Header -->
+        <div class="top-bar">
+            <div class="top-left">
+                <span class="bb-icon">⚽</span>
+                <span class="title" data-i18n="bb_title">Ball Bounce</span>
+            </div>
+            <div class="top-right">
+                <button class="fs-btn" id="fs-btn" onclick="toggleFS()" title="Fullscreen">⛶</button>
+                <div class="lang-wrap">
+                    <select class="lang-sel" id="lang-select" onchange="onLanguageChange(this)"></select>
+                    <span class="lang-arr">▼</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game area -->
+        <div class="game-area" id="game-area">
+            <iframe 
+                src="./game/index.html" 
+                width="100%" 
+                height="100%" 
+                scrolling="none" 
+                frameborder="0"
+                allow="autoplay"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="bottom-bar">
+            <span class="hint" data-i18n="bb_tip">Arrossega per moure la bola</span>
+            <span class="credit">Html5 Games</span>
+        </div>
+    </div>
+
+    <script src="./../translations.js"></script>
+    <script>
+        function toggleFS() {
+            const wrap = document.querySelector('.game-wrap');
+            if (!document.fullscreenElement) {
+                (wrap.requestFullscreen || wrap.webkitRequestFullscreen || wrap.msRequestFullscreen).call(wrap);
+            } else {
+                (document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen).call(document);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadTranslations();
+        });
+    </script>
+</body>
+
+</html>

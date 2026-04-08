@@ -51,3 +51,5 @@ pacman_1p,1 Jugador,1 Jugador,1 Player,1 Jokalaria,1 Xogador,1 Jogador,1 Joueur,
 pacman_2p,2 Jugadors,2 Jugadores,2 Players,2 Jokalari,2 Xogadores,2 Jogadores,2 Joueurs,2 Giocatori,2 Spieler
 br_title,Basket Random,Basket Random,Basket Random,Basket Random,Basket Random,Basket Random,Basket Random,Basket Random,Basket Random
 br_tip,Fletxa Amunt / W per saltar,Flecha Arriba / W para saltar,Up Arrow / W to jump,Gora Gezia / W salto egiteko,Frecha Arriba / W para saltar,Seta Cima / W para pular,Flèche Haut / W pour sauter,Freccia Sù / W per saltare,Pfeil Hoch / W zum Springen
+bb_title,Ball Bounce,Ball Bounce,Ball Bounce,Ball Bounce,Ball Bounce,Ball Bounce,Ball Bounce,Ball Bounce,Ball Bounce
+bb_tip,Arrossega per moure la bola,Arrastra para mover la bola,Drag to move the ball,Sakatu eta arrastatu,Arrastra para mover,Arraste para mover,Faites glisser pour déplacer,Trascina per muovere,Ziehen um zu bewegen
