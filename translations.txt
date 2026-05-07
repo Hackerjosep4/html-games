@@ -55,3 +55,5 @@ bb_title,Ball Bounce,Ball Bounce,Ball Bounce,Ball Bounce,Ball Bounce,Ball Bounce
 bb_tip,Arrossega per moure la bola,Arrastra para mover la bola,Drag to move the ball,Sakatu eta arrastatu,Arrastra para mover,Arraste para mover,Faites glisser pour déplacer,Trascina per muovere,Ziehen um zu bewegen
 balatro_title,Balatro,Balatro,Balatro,Balatro,Balatro,Balatro,Balatro,Balatro,Balatro
 balatro_tip,Crea la millor mà de pòquer!,¡Crea la mejor mano de póker!,Create the best poker hand!,Sortu póker esku onena!,Crea a mellor man de póker!,Crie a melhor mão de pôquer!,Créez la meilleure main de poker!,Crea la miglior mano di poker!,Erstelle das beste Pokerblatt!
+gd_title,Geometry Dash,Geometry Dash,Geometry Dash,Geometry Dash,Geometry Dash,Geometry Dash,Geometry Dash,Geometry Dash,Geometry Dash
+gd_tip,Prem Espai / Clic per saltar,Pulsa Espacio / Clic para saltar,Press Space / Click to jump,Sakatu Zuriunea / Egin klik salto egiteko,Preme Espazo / Clic para saltar,Pressione Espaço / Clique para pular,Espace / Clic pour sauter,Premi Spazio / Clic per saltare,Leertaste / Klick zum Springen

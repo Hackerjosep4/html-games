@@ -75,7 +75,15 @@ pacman_desc,El joc clàssic de Google Pac-Man,The classic Google Pac-Man game
 pacman_tip,Usa les fletxes per moure el Pac-Man,Use arrow keys to move Pac-Man
 fullscreen,Pantalla completa,Fullscreen
 pacman_1p,1 Jugador,1 Player
-pacman_2p,2 Jugadors,2 Players`;
+pacman_2p,2 Jugadors,2 Players
+br_title,Basket Random,Basket Random
+br_tip,Fletxa Amunt / W per saltar,Up Arrow / W to jump
+bb_title,Ball Bounce,Ball Bounce
+bb_tip,Arrossega per moure la bola,Drag to move the ball
+balatro_title,Balatro,Balatro
+balatro_tip,Crea la millor mà de pòquer!,Create the best poker hand!
+gd_title,Geometry Dash,Geometry Dash
+gd_tip,Prem Espai / Clic per saltar,Press Space / Click to jump`;
 
 // --- CSV Parser ---
 function parseCSV(csvText) {
